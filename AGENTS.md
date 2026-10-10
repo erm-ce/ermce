@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-ERM (Emergency Response Management) is a Discord bot for Roblox roleplay community management. It handles staff shift logging, punishments, infractions, activity monitoring, ER:LC game integration, and more.
+ERM CE (Emergency Response Management Community edition) is a Discord bot for Roblox roleplay community management. It handles staff shift logging, punishments, infractions, activity monitoring, ER:LC game integration, and more.
 
 **Stack:** Python 3.12 + discord.py + MongoDB (pymongo) + FastAPI (internal API)
 

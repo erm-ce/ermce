@@ -16,6 +16,8 @@ LINK_URL = (
     "&scope=openid+profile&state={user_id}"
 )
 
+# TODO ^^
+
 logger = logging.getLogger(__name__)
 cooldown = verification.Cooldown(VERIFY_COOLDOWN_SECONDS)
 
@@ -57,7 +59,7 @@ async def verify_member(bot, member):
         return (
             notice(
                 "Roblox Is Not Responding",
-                "ERM could not reach Roblox, try again in a minute.",
+                "ERM CE could not reach Roblox, try again in a minute.",
                 RED_COLOR,
             ),
             None,
@@ -68,7 +70,7 @@ async def verify_member(bot, member):
         return (
             notice(
                 "Link Your Account",
-                "Your Roblox account is not linked to ERM yet. "
+                "Your Roblox account is not linked to ERM CE yet. "
                 "Link it with the button below, then verify again.",
             ),
             link_view(member.id),
@@ -84,7 +86,7 @@ async def verify_member(bot, member):
     lines = [f"You are verified as **{info.get('name')}**."]
     if result["skipped"]:
         lines.append(
-            "ERM could not apply: {}. Its role may sit below the ones it needs to manage.".format(
+            "ERM CE could not apply: {}. Its role may sit below the ones it needs to manage.".format(
                 ", ".join(sorted(set(result["skipped"])))
             )
         )
@@ -106,7 +108,7 @@ async def run_verification(bot, interaction):
             exception,
         )
         embed = notice(
-            "Something Went Wrong", "ERM could not verify you right now, try again shortly.", RED_COLOR
+            "Something Went Wrong", "ERM CE could not verify you right now, try again shortly.", RED_COLOR
         )
         view, verified = None, None
 
@@ -196,7 +198,7 @@ class Verification(commands.Cog):
 
         if not ctx.interaction:
             return await ctx.send(
-                embed=notice("Use the Slash Command", "Run `/verify` so ERM can reply privately.")
+                embed=notice("Use the Slash Command", "Run `/verify` so ERM CE can reply privately.")
             )
 
         await run_verification(self.bot, ctx.interaction)

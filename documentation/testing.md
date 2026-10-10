@@ -2,7 +2,7 @@
 
 # Testing
 
-This document covers how to run ERM's test suite and how the  
+This document covers how to run ERM CE's test suite and how the  
 test infrastructure is structured.
 
 ---

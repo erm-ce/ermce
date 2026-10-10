@@ -1,6 +1,7 @@
 # Self-Hosting ERM
 Following the shutdown of ERM, the team has decided to provide a self-hosting guide for people who wish to have a personal copy of ERM. This is a lot cheaper than paying for a bot like Melonly, and leaves you open to make your own adaptations to the source.
 
+For more infomation on this topic please go to the
 > [!CAUTION]
 > Although you host the source yourself, you are still subject to following the license. The license requires that ERM is attributed and you do not change the license of the code. You also cannot use the bot/code for any commericial purposes.
 

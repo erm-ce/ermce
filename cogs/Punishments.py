@@ -121,7 +121,7 @@ class Punishments(commands.Cog):
             return await new_failure_embed(
                 ctx,
                 "Maintenance",
-                "This command is currently disabled as ERM is currently undergoing maintenance updates. This command will be turned off briefly to ensure that no data is lost during the maintenance.",
+                "This command is currently disabled as ERM CE is currently undergoing maintenance updates. This command will be turned off briefly to ensure that no data is lost during the maintenance.",
             )
 
         roblox_user = await get_roblox_by_username(user, self.bot, ctx)
@@ -660,7 +660,7 @@ class Punishments(commands.Cog):
         if self.bot.punishments_disabled is True:
             return await failure_embed(
                 ctx,
-                "This command is currently disabled as ERM is currently undergoing maintenance updates. This command will be turned off briefly to ensure that no data is lost during the maintenance. It will be returned shortly.",
+                "This command is currently disabled as ERM CE is currently undergoing maintenance updates. This command will be turned off briefly to ensure that no data is lost during the maintenance. It will be returned shortly.",
             )
 
         bot = self.bot
@@ -898,7 +898,7 @@ class Punishments(commands.Cog):
                 return await ctx.send(
                     embed=discord.Embed(
                         title="Invalid Time",
-                        description="This time format is not accepted by ERM. Please seek the documentation for details",
+                        description="This time format is not accepted by ERM CE. Please seek the documentation for details",
                         color=BLANK_COLOR,
                     )
                 )
@@ -998,7 +998,7 @@ class Punishments(commands.Cog):
             return await new_failure_embed(
                 ctx,
                 "Maintenance",
-                "This command is currently disabled as ERM is currently undergoing maintenance updates. This command will be turned off briefly to ensure that no data is lost during the maintenance.",
+                "This command is currently disabled as ERM CE is currently undergoing maintenance updates. This command will be turned off briefly to ensure that no data is lost during the maintenance.",
             )
 
         try:
@@ -1097,7 +1097,7 @@ class Punishments(commands.Cog):
                 return await ctx.send(
                     embed=discord.Embed(
                         title="Invalid Time",
-                        description="This time format is not accepted by ERM. Please seek the documentation for details",
+                        description="This time format is not accepted by ERM CE. Please seek the documentation for details",
                         color=BLANK_COLOR,
                     )
                 )
@@ -1224,7 +1224,7 @@ class Punishments(commands.Cog):
                 return await ctx.send(
                     embed=discord.Embed(
                         title="Invalid Time",
-                        description="This time format is not accepted by ERM. Please seek the documentation for details",
+                        description="This time format is not accepted by ERM CE. Please seek the documentation for details",
                         color=BLANK_COLOR,
                     )
                 )
@@ -1330,7 +1330,7 @@ class Punishments(commands.Cog):
                 return await ctx.send(
                     embed=discord.Embed(
                         title="Invalid Time",
-                        description="This time format is not accepted by ERM. Please seek the documentation for details",
+                        description="This time format is not accepted by ERM CE. Please seek the documentation for details",
                         color=BLANK_COLOR,
                     )
                 )
@@ -1470,7 +1470,7 @@ class Punishments(commands.Cog):
                 return await ctx.send(
                     embed=discord.Embed(
                         title="Invalid Time",
-                        description="This time format is not accepted by ERM. Please seek the documentation for details",
+                        description="This time format is not accepted by ERM CE. Please seek the documentation for details",
                         color=BLANK_COLOR,
                     )
                 )

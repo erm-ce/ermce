@@ -68,7 +68,7 @@ class MC(commands.Cog):
     async def mc(self, ctx: commands.Context):
         pass
 
-    @mc.command(name="link", description="Link your Maple County server with ERM!")
+    @mc.command(name="link", description="Link your Maple County server with ERM CE!")
     @is_management()
     async def mc_link(self, ctx: commands.Context, *, server_name: str):
         # get the linked roblox user
@@ -90,7 +90,7 @@ class MC(commands.Cog):
             return await ctx.send(
                 embed=discord.Embed(
                     title="Server Not Found",
-                    description="We could not find a server you own under the server name provided. Make sure you are linked with ERM by running `/link` in any server.",
+                    description="We could not find a server you own under the server name provided. Make sure you are linked with ERM CE by running `/link` in any server.",
                     color=BLANK_COLOR,
                 )
             )

@@ -2,7 +2,7 @@
 
 # Contributing
 
-This document covers the process for contributing to ERM.
+This document covers the process for contributing to ERM CE.
 
 ---
 
