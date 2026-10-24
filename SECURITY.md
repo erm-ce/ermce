@@ -4,7 +4,7 @@
 
 ## Supported Versions
 
-We actively maintain the `Development` branch with security patches.
+We actively maintain the `dev` branch with security patches.
 Only the latest stable release receives security updates.
 
 | Version | Supported          |
