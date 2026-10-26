@@ -3,15 +3,15 @@
 # AI Coding Assistants
 
 This document provides guidance for AI tools and developers using AI  
-assistance when contributing to ERM.
+assistance when contributing to ERM CE.
 
-AI tools helping with ERM development should follow the standard  
+AI tools helping with ERM CE development should follow the standard  
 development process.
 ---
 
 ## Licensing and Legal Requirements
 
-All contributions must comply with ERM's (Emergency Reponse Management) licensing requirements:
+All contributions must comply with ERM CE's (Emergency Reponse Management Community edition) licensing requirements:
 
 - All code must be compatible with the Attribution-NonCommercial-ShareAlike (CC BY-NC-SA) license  
 - Use appropriate SPDX license identifiers  
@@ -33,7 +33,7 @@ is responsible for:
 
 ## Attribution
 
-When AI tools contribute to ERM development, proper attribution  
+When AI tools contribute to ERM CE development, proper attribution  
 helps track the evolving role of AI in the development process.  
 Contributions should include an Assisted-by tag in the following format:
 

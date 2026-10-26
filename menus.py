@@ -1607,7 +1607,7 @@ class CustomCommandModification(discord.ui.View):
             return await modal.interaction.followup.send(
                 embed=discord.Embed(
                     title="Name Taken",
-                    description=f"`{chosen_identifier}` is already the name of an ERM command. Choose a different name for your custom command.",
+                    description=f"`{chosen_identifier}` is already the name of an ERM CE command. Choose a different name for your custom command.",
                     color=BLANK_COLOR,
                 ),
                 ephemeral=True,
@@ -3817,7 +3817,7 @@ class ActionCreationToolkit(discord.ui.View):
             "Delay",
             "Add Role",
             "Remove Role",
-            "Execute ERM Command"
+            "Execute ERM CE Command"
         ]
 
         extras = ["Remove Last Integration"]
@@ -3976,7 +3976,7 @@ class ActionCreationToolkit(discord.ui.View):
             "Delay": 1,
             "Add Role": 1,
             "Remove Role": 1,
-            "Execute ERM Command": 1,
+            "Execute ERM CE Command": 1,
         }
         if not correspondents[button_name]:
             msg = interaction.message
@@ -4011,7 +4011,7 @@ class ActionCreationToolkit(discord.ui.View):
                         "Delay": 6,
                         "Add Role": 7,
                         "Remove Role": 8,
-                        "Execute ERM Command": 9
+                        "Execute ERM CE Command": 9
                     }[button_name],
                     "ExtraInformation": None,
                 }
@@ -4036,7 +4036,7 @@ class ActionCreationToolkit(discord.ui.View):
                 "Delay": ["Time (Seconds)", 1],
                 "Add Role": ["Role ID", 0],
                 "Remove Role": ["Role ID", 0],
-                "Execute ERM Command": ["Command (without prefix)", 1],
+                "Execute ERM CE Command": ["Command (without prefix)", 1],
             }
 
             view = CustomModalView(
@@ -4140,7 +4140,7 @@ class ActionCreationToolkit(discord.ui.View):
                         "Delay": 6,
                         "Add Role": 7,
                         "Remove Role": 8,
-                        "Execute ERM Command": 9
+                        "Execute ERM CE Command": 9
                     }[button_name],
                     "ExtraInformation": provided_information,
                 }
@@ -6587,7 +6587,7 @@ class ERMCommandLog(AssociationConfigurationView):
 
     @discord.ui.select(
         cls=discord.ui.ChannelSelect,
-        placeholder="ERM Log Channel",
+        placeholder="ERM CE Log Channel",
         row=0,
         max_values=1,
         min_values=0,
@@ -6614,7 +6614,7 @@ class ERMCommandLog(AssociationConfigurationView):
             self.bot,
             interaction.guild,
             interaction.user,
-            f"ERM Log Channel Set: <#{select.values[0].id}>",
+            f"ERM CE Log Channel Set: <#{select.values[0].id}>",
         )
 
 
@@ -8856,7 +8856,7 @@ class ERLCIntegrationConfiguration(AssociationConfigurationView):
 
         await interaction.response.send_message(embed=embed, view=view, ephemeral=True)
 
-    @discord.ui.button(label="Remote ERM Commands", row=3)
+    @discord.ui.button(label="Remote ERM CE Commands", row=3)
     async def remote_commands(
         self, interaction: discord.Interaction, button: discord.ui.Button
     ):
@@ -10717,7 +10717,7 @@ class CustomCommandOptionSelect(discord.ui.View):
             return await self.modal.interaction.followup.send(
                 embed=discord.Embed(
                     title="Name Taken",
-                    description=f"`{self.modal.name.value}` is already the name of an ERM command. Choose a different name for your custom command.",
+                    description=f"`{self.modal.name.value}` is already the name of an ERM CE command. Choose a different name for your custom command.",
                     color=blank_color,
                 ),
                 ephemeral=True,
@@ -12447,7 +12447,7 @@ class AccountLinkingMenu(discord.ui.View):
             "Romania",
             "America",
             "Germany",
-            "ERM",
+            "ERM CE",
             "Electricity",
         ]
 

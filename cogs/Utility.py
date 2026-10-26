@@ -381,7 +381,7 @@ class Utility(commands.Cog):
                 description="Visit your server's Moderation Panel using the button below.",
             ).set_author(name=ctx.guild.name, icon_url=guild_icon),
             view=LinkView(
-                label="Mod Panel", url=f"https://ermbot.xyz/{ctx.guild.id}/panel"
+                label="Mod Panel", url=f"https://ermce.fyi/{ctx.guild.id}/panel"
             ),
         )
 
@@ -401,52 +401,52 @@ class Utility(commands.Cog):
                 description="Visit your server's Dashboard using the button below.",
             ).set_author(name=ctx.guild.name, icon_url=guild_icon),
             view=LinkView(
-                label="Dashboard", url=f"https://ermbot.xyz/{ctx.guild.id}/dashboard"
+                label="Dashboard", url=f"https://ermce.fyi/{ctx.guild.id}/dashboard"
             ),
         )
 
     @commands.hybrid_command(
         name="support",
         aliases=["support-server"],
-        description="Information about the ERM Support Server",
+        description="Information about the ERM CE Support Server",
         extras={"category": "Utility"},
     )
     async def support_server(self, ctx):
         # using an embed
-        # [**Support Server**](https://discord.gg/5pMmJEYazQ)
+        # [**Support Server**](https://discord.gg/vBdnMbkMHG)
 
         await ctx.reply(
             embed=discord.Embed(
-                title="ERM Support",
-                description="You can join the ERM Systems Discord server using the button below.",
+                title="ERM CE Support",
+                description="You can join the ERM CE Systems Discord server using the button below.",
                 color=BLANK_COLOR,
             ),
-            view=LinkView(label="Support Server", url="https://discord.gg/FAC629TzBy"),
+            view=LinkView(label="Support Server", url="https://discord.gg/vBdnMbkMHG"),
         )
 
     @commands.hybrid_command(
         name="about",
         aliases=["info"],
-        description="Information about ERM",
+        description="Information about ERM CE",
         extras={"category": "Utility"},
     )
     async def about(self, ctx):
         # using an embed
         # [**Support Server**](https://discord.gg/5pMmJEYazQ)
         embed = discord.Embed(
-            title="About ERM",
+            title="About ERM cE",
             color=BLANK_COLOR,
-            description="ERM is the all-in-one approach to game moderation logging, shift logging and more.",
+            description="ERM CE is the all-in-one approach to game moderation logging, shift logging and more.",
         )
 
         embed.add_field(
             name=f"Bot Information",
             value=(
-                "> **Website:** [View Website](https://ermbot.xyz)\n"
-                "> **Support:** [Join Server](https://discord.gg/FAC629TzBy)\n"
+                "> **Website:** [View Website](https://ermce.fyi)\n"
+                "> **Support:** [Join Server](https://discord.gg/vBdnMbkMHG)\n"
                 f"> **Invite:** [Invite Bot](https://discord.com/oauth2/authorize?client_id={self.bot.user.id}&permissions=8&scope=bot%20applications.commands)\n"
-                "> **Documentation:** [View Documentation](https://docs.ermbot.xyz)\n"
-                "> **Desktop:** [Download ERM Desktop](https://ermbot.xyz/download)"
+                "> **Documentation:** [View Documentation](https://docs.ermce.fyi)\n"
+                "> **Desktop:** [Download ERM CE Desktop](https://ermce.fyi/download)"
             ),
             inline=False,
         )

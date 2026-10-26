@@ -15,13 +15,13 @@ Only the latest stable release receives security updates.
 
 ## Reporting a Vulnerability
 
-If you discover a security vulnerability in ERM, please report it
+If you discover a security vulnerability in ERM CE, please report it
 privately **before** disclosing it publicly.
 
 ### How to report
 
 Please report vulnerabilities via the
-[GitHub Security Advisory](https://github.com/ERM-Systems/ERM/security/advisories/new)
+[GitHub Security Advisory](https://github.com/erm-ce/ermce/security/advisories/new)
 system.
 
 Do **not** use the public issue tracker for vulnerability reports.
@@ -48,9 +48,9 @@ Do **not** use the public issue tracker for vulnerability reports.
 
 This policy covers:
 
-- The ERM Discord bot and its source code
+- The ERM CE Discord bot and its source code
 - The internal FastAPI API
-- Official deployment infrastructure maintained by ERM Systems
+- Official deployment infrastructure maintained by ERM CE
 
 Third-party integrations (Discord, MongoDB, GitHub Actions) are
 subject to their own security policies.
@@ -68,4 +68,4 @@ We ask that you:
 - Avoid exploiting the vulnerability beyond what is necessary to
   demonstrate it
 
-We thank security researchers who help keep ERM and its users safe.
+We thank security researchers who help keep ERM CE and its users safe.

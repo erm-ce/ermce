@@ -159,7 +159,7 @@ class Sessions(commands.Cog):
         })
 
         wording = "post a vote" if kind == "vote" else "start"
-        return await (ctx.reply if not ctx.interaction else ctx.interaction.followup.send)(embed=discord.Embed(title = f"{self.bot.emoji_controller.get_emoji("success")} Scheduled", description=f"ERM will {wording} <t:{moment}:R>.", colour=discord.Colour.green()), ephemeral=True)
+        return await (ctx.reply if not ctx.interaction else ctx.interaction.followup.send)(embed=discord.Embed(title = f"{self.bot.emoji_controller.get_emoji("success")} Scheduled", description=f"ERM CE will {wording} <t:{moment}:R>.", colour=discord.Colour.green()), ephemeral=True)
 
     @session.command(name = "scheduled", description="See the sessions waiting to run")
     @require_settings(["sessions"])
@@ -179,7 +179,7 @@ class Sessions(commands.Cog):
     async def _cancel(self, ctx: commands.Context, id: str):
         if not ObjectId.is_valid(id) or not await self.bot.scheduled_sessions.cancel(ctx.guild.id, ObjectId(id)):
             return await ctx.reply(embed=discord.Embed(title = "Session", description="There is no scheduled session with that identifier."))
-        return await (ctx.reply if not ctx.interaction else ctx.interaction.followup.send)(embed=discord.Embed(title = f"{self.bot.emoji_controller.get_emoji("success")} Successfully cancelled the scheduled session", description="ERM will no longer run it.", colour=discord.Colour.green()), ephemeral=True)
+        return await (ctx.reply if not ctx.interaction else ctx.interaction.followup.send)(embed=discord.Embed(title = f"{self.bot.emoji_controller.get_emoji("success")} Successfully cancelled the scheduled session", description="ERM CE will no longer run it.", colour=discord.Colour.green()), ephemeral=True)
 
     @session.command(name = "start", description="Start a session")
     @require_settings(["sessions"])
@@ -247,7 +247,7 @@ class Sessions(commands.Cog):
         info = combined["status"]
         cont = discord.ui.Container(discord.ui.TextDisplay(
             "### Session Status\n"
-            "Below are some analytics regarding your current session. ERM collects data such as your player counts and max player counts and these are deleted when the session is over."
+            "Below are some analytics regarding your current session. ERM CE collects data such as your player counts and max player counts and these are deleted when the session is over."
         ))
         graph = await asyncio.get_event_loop().run_in_executor(None, self.generate_graph, session)
         cont.add_item(discord.ui.Separator())

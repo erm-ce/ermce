@@ -33,7 +33,7 @@ class Search(commands.Cog):
     @commands.hybrid_command(
         name="mywarnings",
         aliases=["mymoderations", "mypunishments", "moderations"],
-        description="Lookup your punishments with ERM.",
+        description="Lookup your punishments with ERM CE.",
         extras={"category": "Search"},
         with_app_command=True,
     )
@@ -49,7 +49,7 @@ class Search(commands.Cog):
         if self.bot.punishments_disabled is True:
             return await failure_embed(
                 ctx,
-                "This command is currently disabled as ERM is currently undergoing maintenance updates. This command will be turned off briefly to ensure that no data is lost during the maintenance. It will be returned shortly.",
+                "This command is currently disabled as ERM CE is currently undergoing maintenance updates. This command will be turned off briefly to ensure that no data is lost during the maintenance. It will be returned shortly.",
             )
 
         bot = self.bot
@@ -87,7 +87,7 @@ class Search(commands.Cog):
             "ERM Support": 1053417531278364713,
             "ERM Staff": 988055417907200010,
             "ERM Quality Assurance": 1306431506914218067,
-        }
+        } # TO BE CHANGED
 
         magic_flags_reverse = {
             v: k for k, v in magic_flags.items()
@@ -279,7 +279,7 @@ class Search(commands.Cog):
         if self.bot.punishments_disabled is True:
             return await failure_embed(
                 ctx,
-                "This command is currently disabled as ERM is currently undergoing maintenance updates. This command will be turned off briefly to ensure that no data is lost during the maintenance. It will be returned shortly.",
+                "This command is currently disabled as ERM CE is currently undergoing maintenance updates. This command will be turned off briefly to ensure that no data is lost during the maintenance. It will be returned shortly.",
             )
 
         bot = self.bot

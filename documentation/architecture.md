@@ -2,7 +2,7 @@
 
 # Architecture
 
-This document describes how ERM is structured and how its layers  
+This document describes how ERM CE is structured and how its layers  
 interact at runtime.
 
 ---
@@ -162,7 +162,7 @@ Provides the `Document` base class used by all datamodels. Wraps
 ## Internal API
 
 `utils/api.py` runs a FastAPI application alongside the bot using  
-`uvicorn`. It exposes HTTP endpoints used by the ERM website and  
+`uvicorn`. It exposes HTTP endpoints used by the ERM CE website and  
 panel. It is not required for basic bot operation and can be ignored  
 for most development work.
 
@@ -179,5 +179,5 @@ to follow or reuse.
 
 Do not use this file for any new views, instead, please create a new file
 in the `ui` folder and reference that. `menus.py` will be removed in a later
-version of ERM.
+version of ERM CE.
 

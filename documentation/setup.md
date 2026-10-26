@@ -2,7 +2,7 @@
 
 # Setup Guide
 
-This document covers how to get ERM running locally for development  
+This document covers how to get ERM CE running locally for development  
 or self-hosted use.
 
 ---
@@ -21,7 +21,7 @@ or self-hosted use.
 Clone the repository and install dependencies:
 
 ```bash
-git clone https://github.com/mikeywhiston/erm
+git clone https://github.com/erm-ce/ermce
 cd erm
 pip install -r requirements.txt
 ```
@@ -60,17 +60,17 @@ cp .env.template .env
 - `ACTIONS_ENABLED` — `TRUE` or `FALSE`. Controls the Actions cog and  
   the `iterate_conditions` background task
 
-### Optional — ERM API / Panel
+### Optional — ERM CE API / Panel
 
-- `API_PRIVATE_KEY` — Private key for the internal ERM API  
+- `API_PRIVATE_KEY` — Private key for the internal ERM CE API  
 - `API_STATIC_TOKEN` — Static token for API authentication  
-- `BASE_API_URL` — Base URL for the ERM API  
-- `PANEL_API_URL` — URL for the ERM management panel  
+- `BASE_API_URL` — Base URL for the ERM CE API  
+- `PANEL_API_URL` — URL for the ERM CE management panel  
 - `IPC_SECRET_KEY` — Secret key for inter-process communication  
 
 ### Optional — OAuth2 (website)
 
-Required only if running the ERM website/panel:
+Required only if running the ERM CE website/panel:
 
 - `DEVELOPMENT_CLIENT_ID` / `PRODUCTION_CLIENT_ID` — Discord OAuth2 client IDs  
 - `DEVELOPMENT_CLIENT_SECRET` / `PRODUCTION_CLIENT_SECRET` — Discord OAuth2 secrets  

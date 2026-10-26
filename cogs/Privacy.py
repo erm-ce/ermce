@@ -17,10 +17,10 @@ class Privacy(commands.Cog):
             self.add_item(discord.ui.Section(discord.ui.TextDisplay(
                 (
                     "### User Configurations\n"
-                    "This is where you can select your opted in features for ERM. All of these are on by default, however, you can change the status of these.\n\n"
+                    "This is where you can select your opted in features for ERM CE. All of these are on by default, however, you can change the status of these.\n\n"
                     "**Configurations**\n"
                     "> **Punishment Alerts**: Toggle being alerted when you are punished.\n"
-                    "> **Shift Logging**: Consent to your shifts being logged by ERM.\n"
+                    "> **Shift Logging**: Consent to your shifts being logged by ERM CE.\n"
                     "> **Automatic Shifts**: Allow shifts to be started when you join a server you are a moderator in."
                 )
             ), accessory=discord.ui.Thumbnail(media=user.display_avatar.with_format("png").url))).add_item(discord.ui.Separator())

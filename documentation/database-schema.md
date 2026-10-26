@@ -2,14 +2,14 @@
 
 # Database Schema
 
-This document describes the MongoDB collections used by ERM and  
+This document describes the MongoDB collections used by ERM CE and  
 their primary fields. All collections are accessed via their  
 corresponding datamodel class in `datamodels/`.
 
 The default database name is `erm`. This can be overridden with  
 the `DB_NAME` environment variable.
 
-ERM also uses three separate databases: `MapleCounty` for the MapleCounty integration, `ERMProcessing` for whitelabel instances, and `UserIdentity` for panel data.
+ERM CE also uses three separate databases: `MapleCounty` for the MapleCounty integration, `ERMProcessing` for whitelabel instances, and `UserIdentity` for panel data.
 
 ---
 
@@ -150,7 +150,7 @@ Key fields:
 
 ### `api_tokens`
 
-ERM internal API access tokens.
+ERM CE internal API access tokens.
 
 Key fields:
 

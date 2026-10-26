@@ -726,7 +726,7 @@ class ERLC(commands.Cog):
             )
 
     @server.command(
-        name="message", description="Send a Message to your ER:LC server with ERM!"
+        name="message", description="Send a Message to your ER:LC server with ERM CE!"
     )
     @is_staff()
     @is_erlc_server_linked()
@@ -756,7 +756,7 @@ class ERLC(commands.Cog):
             )
 
     @server.command(
-        name="hint", description="Send a Hint to your ER:LC server with ERM!"
+        name="hint", description="Send a Hint to your ER:LC server with ERM CE!"
     )
     @is_staff()
     @is_erlc_server_linked()
@@ -785,7 +785,7 @@ class ERLC(commands.Cog):
 
     @server.command(
         name="link",
-        description="Link your ER:LC server with ERM!",
+        description="Link your ER:LC server with ERM CE!",
         extras={"ignoreDefer": True},
     )
     @is_management()
@@ -826,7 +826,7 @@ class ERLC(commands.Cog):
 
     @server.command(
         name="unlink",
-        description="Unlink your ER:LC server from ERM!",
+        description="Unlink your ER:LC server from ERM CE!",
     )
     @is_management()
     @is_erlc_server_linked()
@@ -836,7 +836,7 @@ class ERLC(commands.Cog):
         await ctx.send(
             embed=discord.Embed(
                 title=f"{self.bot.emoji_controller.get_emoji('success')} Successfully Unlinked",
-                description="I have unlinked your ER:LC server from ERM.",
+                description="I have unlinked your ER:LC server from ERM CE.",
                 color=GREEN_COLOR,
             )
         )
