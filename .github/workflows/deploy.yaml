@@ -1,0 +1,24 @@
+name: Manual Deploy Prod Stack
+
+on:
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: self-hosted
+    steps:
+      - name: Stop Docker Container
+        run: |
+          cd /opt/stacks/bot
+          docker compose down
+
+      - name: Fetch and Reset Code to Remote Prod
+        run: |
+          cd /opt/stacks/bot
+          git fetch origin prod
+          git reset --hard origin/prod
+
+      - name: Start Docker Container
+        run: |
+          cd /opt/stacks/bot
+          docker compose up -d 
