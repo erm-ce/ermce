@@ -155,7 +155,8 @@ class Bot(commands.AutoShardedBot):
         else:
             public = False
         if public:
-            raise Exception("ERM's source does not allow you to have an Install Link configured on your bot. This is to avoid users reselling our services. Please ensure that you have set the Install Link to 'None' instead of Discord Provided URL.")
+            pass
+ #           raise Exception("ERM's source does not allow you to have an Install Link configured on your bot. This is to avoid users reselling our services. Please ensure that you have set the Install Link to 'None' instead of Discord Provided URL.")
         if not self.setup_status:
             # await bot.load_extension('utils.routes')
             logging.info(
