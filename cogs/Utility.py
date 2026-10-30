@@ -446,7 +446,7 @@ class Utility(commands.Cog):
                 "> **Support:** [Join Server](https://discord.gg/vBdnMbkMHG)\n"
                 f"> **Invite:** [Invite Bot](https://discord.com/oauth2/authorize?client_id={self.bot.user.id}&permissions=8&scope=bot%20applications.commands)\n"
                 "> **Documentation:** [View Documentation](https://docs.ermce.fyi)\n"
-                "> **Desktop:** [Download ERM CE Desktop](https://ermce.fyi/download)"
+    #            "> **Desktop:** [Download ERM CE Desktop](https://ermce.fyi/download)"
             ),
             inline=False,
         )

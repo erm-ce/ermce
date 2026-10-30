@@ -42,7 +42,7 @@ tokenGenerator = ZUID(
 
 generator = SnowflakeGenerator(192)
 error_gen = ZUID(prefix="error_", length=10)
-system_code_gen = ZUID(prefix="erm-systems-", length=7)
+system_code_gen = ZUID(prefix="erm-ce-systems-", length=7)
 
 
 def removesuffix(input_string: str, suffix: str):
