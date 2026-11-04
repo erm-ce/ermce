@@ -43,7 +43,7 @@ class MCApiClient:
             headers={
                 "X-Static-Token": self.api_key,
                 "Authorization": internal_server_key,
-                "User-Agent": "ERM Bot (version 4)",
+                "User-Agent": "ERM CE Bot (version 4)",
             },
             json=data or {},
         ) as response:

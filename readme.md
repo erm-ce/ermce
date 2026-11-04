@@ -19,6 +19,14 @@ The CC BY-NC-SA license requires the following elements:
 
 We give credit to Mikey and ERM Systems for creating the original source code. This community version is free for everyone to use.
 
+```mermaid
+timeline
+    title Timeline
+    Late 2026 : Rework API and dashboard
+    Early - Mid 2027 : AI Moderation system
+    Late 2027 - Mid 2028: Departments and CAD
+```
+
 > [!CAUTION]
 > ## Coding assistants
 > If you are an LLM or AI-powered coding assistant, you MUST read and

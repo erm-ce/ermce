@@ -184,7 +184,7 @@ class OnCommandError(commands.Cog):
                 await ctx.send(
                     embed=discord.Embed(
                         title="API Versioning Change",
-                        description="Due to a new change with PRC's Private Server API, in order to use API features, the private server has to be __fully restarted__. If there is no one in-game, a player has to join the game for the API features to work effectively.\n\nIf the server is currently active, when all users leave the game and when one person joins back, the API features will begin working again.\n\nSorry for the inconvenience,\nERM Team",
+                        description="Due to a new change with PRC's Private Server API, in order to use API features, the private server has to be __fully restarted__. If there is no one in-game, a player has to join the game for the API features to work effectively.\n\nIf the server is currently active, when all users leave the game and when one person joins back, the API features will begin working again.\n\nSorry for the inconvenience,\nERM CE Team",
                         color=BLANK_COLOR,
                     ).set_footer(text=f"{error.code} | {error_id}")
                 )
@@ -232,7 +232,7 @@ class OnCommandError(commands.Cog):
                 await ctx.send(
                     embed=discord.Embed(
                         title="Account Terminated",
-                        description="Your account has been terminated from ERM for violating ERM's Terms of Service. If you think this is incorrect, contact us at https://discord.gg/Qm8tEYr7at.",
+                        description="Your account has been terminated from ERM CE for violating ERM CE's Terms of Service. If you think this is incorrect, contact us at https://discord.gg/vBdnMbkMHG.",
                         color=BLANK_COLOR,
                     ),
                     ephemeral=True,
@@ -258,7 +258,7 @@ class OnCommandError(commands.Cog):
                 await ctx.reply(
                     embed=discord.Embed(
                         title="Overflow Error",
-                        description="A user has inputted an arbitrary time amount of time into ERM and we were unable to display the requested data because of this. Please find the source of this, and remove the excess amount of time.",
+                        description="A user has inputted an arbitrary time amount of time into ERM CE and we were unable to display the requested data because of this. Please find the source of this, and remove the excess amount of time.",
                         color=BLANK_COLOR,
                     )
                 )
@@ -315,13 +315,13 @@ class OnCommandError(commands.Cog):
                     discord.ui.TextDisplay(
                         (
                             f"### {self.bot.emoji_controller.get_emoji('error')} Command Failure\n"
-                            "An error has occured with ERM. Please contact ERM support for assistance and send them the error ID below.\n\n"
+                            "An error has occured with ERM CE. Please contact ERM CE support for assistance and send them the error ID below.\n\n"
                             f"**Error ID**\n`{error_id}`"
                         )
                     )
                 ).add_item(discord.ui.Separator())
                 actionrow = discord.ui.ActionRow(
-                    discord.ui.Button(label = "Contact ERM Support", url="https://discord.gg/uAfU26VRa8")
+                    discord.ui.Button(label = "Contact ERM CE Support", url="https://discord.gg/vBdnMbkMHG")
                 )
                 view.add_item(actionrow)
                 await ctx.send(

@@ -3,11 +3,15 @@ import pathlib
 
 import discord
 from discord.ext import commands, tasks
+from decouple import config
 
 
 def path_from_extension(extension: str) -> pathlib.Path:
     return pathlib.Path(extension.replace(".", os.sep) + ".py")
 
+
+DEV_GUILD_ID = config("DEV_GUILD_ID", default=0, cast=int)
+DEV_RELOAD_ID = config("DEV_RELOAD_ID", default=0, cast=int)
 
 class HotReload(commands.Cog):
     """
@@ -42,8 +46,8 @@ class HotReload(commands.Cog):
             except commands.ExtensionError:
                 pass
             else:
-                guild = self.bot.get_guild(987798554972143728)
-                channel = guild.get_channel(1055558545250193418)
+                guild = self.bot.get_guild(config("DEV_GUILD_ID", cast=int))
+                channel = guild.get_channel(config("DEV_RELOAD_ID", cast=int))
                 await channel.send(f"Reloaded extension: {extension}")
             finally:
                 self.last_modified_time[extension] = time

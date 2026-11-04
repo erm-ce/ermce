@@ -2426,7 +2426,7 @@ class APIRoutes:
             raise HTTPException(
                 status_code=500, detail=f"Internal server error: {str(e)}"
             )
-
+'''
     async def _fetch_whitelabel_asset(self, url: str | None):
         if not url:
             return None
@@ -2583,7 +2583,7 @@ class APIRoutes:
                 logging.warning(f"Failed to notify whitelabel owner: {e}")
 
         return {"cancelled": True}
-
+'''
 
 api = FastAPI()
 

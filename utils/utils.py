@@ -660,7 +660,7 @@ async def log_command_usage(bot, guild, member, command_name):
     if not log_channel.permissions_for(guild.me).send_messages:
         return
     embed = discord.Embed(
-        title="ERM Command Log",
+        title="ERM CE Command Log",
         description=f"Command `{command_name}` used by {member.mention}",
         color=BLANK_COLOR,
     )
@@ -686,7 +686,7 @@ async def config_change_log(bot, guild, member, data):
     if not log_channel.permissions_for(guild.me).send_messages:
         return
     embed = discord.Embed(
-        title="ERM Config Change Log",
+        title="ERM CE Config Change Log",
         description=f"Configuration change made by {member.mention}",
         color=BLANK_COLOR,
     ).add_field(name="Configuration Change", value=data)
