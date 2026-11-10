@@ -1,0 +1,56 @@
+name: CI/CD
+
+on:
+  push:
+    branches: [prod]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    services:
+      mongo:
+        image: mongo:7
+        ports:
+          - 27017:27017
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          pip install flake8 pytest
+
+      - name: Lint (non-blocking)
+        run: flake8 --exit-zero
+
+      - name: Run tests
+        env:
+          ENVIRONMENT: "PRODUCTION"
+          PRODUCTION_BOT_TOKEN: "THISISEXAMPLETRASHTOKEN"
+          MONGO_URL: mongodb://localhost:27017/test
+        run: pytest
+
+  deploy:
+    needs: test
+    if: github.ref == 'refs/heads/prod' && github.event_name == 'push'
+    runs-on: self-hosted
+    timeout-minutes: 15
+
+    steps:
+      - name: Deploy
+        run: |
+          set -e
+          cd /opt/stacks/bot
+          git pull origin prod
+          docker compose up -d --build
+          docker image prune -f

@@ -434,7 +434,7 @@ class Utility(commands.Cog):
         # using an embed
         # [**Support Server**](https://discord.gg/5pMmJEYazQ)
         embed = discord.Embed(
-            title="About ERM cE",
+            title="About ERM CE",
             color=BLANK_COLOR,
             description="ERM CE is the all-in-one approach to game moderation logging, shift logging and more.",
         )
