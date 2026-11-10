@@ -6,7 +6,6 @@
 - [Bot Invitation](https://discord.com/oauth2/authorize?client_id=1439512432665169961&permissions=8&integration_type=0&scope=bot)
 - [Support Server](https://discord.gg/vBdnMbkMHG)
 - [Official Website](https://ermce.fyi/)
-- [Desktop Download](https://ermce.fyi/download)
 
 ## Licensing
 ERM CE is licensed under the Attribution-NonCommercial-ShareAlike (CC BY-NC-SA) license. This license allows for the copy, distribution, and creation of adaptations of the material for non-commercial purposes, as long as proper attribution is given to the original creator and any adaptations are licensed under the same terms.
@@ -19,6 +18,14 @@ The CC BY-NC-SA license requires the following elements:
 - SA: Adaptations must be licensed under the same terms
 
 We give credit to Mikey and ERM Systems for creating the original source code. This community version is free for everyone to use.
+
+```mermaid
+timeline
+    title Timeline
+    Late 2026 : Rework API and dashboard
+    Early - Mid 2027 : AI Moderation system
+    Late 2027 - Mid 2028: Departments and CAD
+```
 
 > [!CAUTION]
 > ## Coding assistants

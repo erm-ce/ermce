@@ -244,14 +244,14 @@ async def apply(bot, member, info, verification):
 
     if add:
         try:
-            await member.add_roles(*add, reason="ERM verification")
+            await member.add_roles(*add, reason="ERM CE verification")
         except discord.HTTPException as exception:
             logger.error("[Verification] could not add roles in %s: %s", guild.id, exception)
             skipped.extend(role.name for role in add)
 
     if remove:
         try:
-            await member.remove_roles(*remove, reason="ERM verification")
+            await member.remove_roles(*remove, reason="ERM CE verification")
         except discord.HTTPException as exception:
             logger.error("[Verification] could not remove roles in %s: %s", guild.id, exception)
             skipped.extend(role.name for role in remove)
@@ -265,7 +265,7 @@ async def apply(bot, member, info, verification):
             skipped.append("nickname")
         else:
             try:
-                await member.edit(nick=nickname, reason="ERM verification")
+                await member.edit(nick=nickname, reason="ERM CE verification")
                 renamed = True
             except discord.HTTPException as exception:
                 logger.error(
@@ -312,9 +312,9 @@ async def post_message(bot, guild):
 
     permissions = channel.permissions_for(guild.me)
     if not permissions.view_channel or not permissions.send_messages:
-        raise ValueError(f"ERM cannot send messages in #{channel.name}.")
+        raise ValueError(f"ERM CE cannot send messages in #{channel.name}.")
     if payload.get("embeds") and not permissions.embed_links:
-        raise ValueError(f"ERM needs Embed Links in #{channel.name} to post that message.")
+        raise ValueError(f"ERM CE needs Embed Links in #{channel.name} to post that message.")
 
     try:
         await bot.http.send_message(

@@ -7,7 +7,7 @@ import logging
 async def change_status(bot):
     await bot.wait_until_ready()
     logging.info("Changing status")
-    status = "⚡ /about | ermbot.xyz"
+    status = "/about | ermce.fyi"
     activity = discord.CustomActivity(name=status)
 
     if not isinstance(bot, commands.AutoShardedBot):

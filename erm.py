@@ -29,7 +29,7 @@ from pymongo import AsyncMongoClient
 import asyncio
 import pytz
 import sentry_sdk
-from decouple import config
+from decouple import config, Csv
 from discord import app_commands
 from discord.ext import tasks
 from roblox import client as roblox
@@ -140,7 +140,7 @@ class Bot(commands.AutoShardedBot):
         # IDs are a security vulnerability.
 
         # Else fall back to the original
-        if user.id == 1394817794427846737:
+        if user.id == OWNER_IDS:
             return True
 
         return await super().is_owner(user)
@@ -155,7 +155,8 @@ class Bot(commands.AutoShardedBot):
         else:
             public = False
         if public:
-            raise Exception("ERM's source does not allow you to have an Install Link configured on your bot. This is to avoid users reselling our services. Please ensure that you have set the Install Link to 'None' instead of Discord Provided URL.")
+            pass
+#            raise Exception("ERM's source does not allow you to have an Install Link configured on your bot. This is to avoid users reselling our services. Please ensure that you have set the Install Link to 'None' instead of Discord Provided URL.")
         if not self.setup_status:
             # await bot.load_extension('utils.routes')
             logging.info(
@@ -226,9 +227,14 @@ class Bot(commands.AutoShardedBot):
                 ),
                 api_key=config("PRC_API_KEY", default=None),
             )
-            self.mc_api = MCApiClient(
-                self, base_url=config("MC_API_URL"), api_key=config("MC_API_KEY")
-            )
+            mc_api_url = config("MC_API_URL", default=None)
+            mc_api_key = config("MC_API_KEY", default=None)
+
+            if mc_api_url and mc_api_key:
+                self.mc_api = MCApiClient(self, base_url=mc_api_url, api_key=mc_api_key)
+            else:
+                self.mc_api = None
+                logging.warning("MC_API_URL/MC_API_KEY not set, MC API client disabled")
 
             Extensions = [m.name for m in iter_modules(["cogs"], prefix="cogs.")]
             Events = [m.name for m in iter_modules(["events"], prefix="events.")]
@@ -276,11 +282,13 @@ class Bot(commands.AutoShardedBot):
             await bot.load_extension("utils.hot_reload")
             # await bot.load_extension('utils.server')
 
-            if not bot.is_synced:  # check if slash commands have been synced
-                bot.tree.copy_global_to(guild=discord.Object(id=987798554972143728))
-            if environment == "DEVELOPMENT":
-                pass
-                # await bot.tree.sync(guild=discord.Object(id=987798554972143728))
+            if environment == "DEVELOPMENT" and DEV_GUILD_ID:
+                dev_guild = discord.Object(id=DEV_GUILD_ID)
+                self.tree.copy_global_to(guild=dev_guild)
+                synced = await self.tree.sync(guild=dev_guild)
+                logging.info(f"Synced {len(synced)} commands to dev guild")
+            else:
+                logging.info(f"{environment}: skipping command sync")
 
             bot.is_synced = True
             self.saved_latencies = {
@@ -321,6 +329,8 @@ bot.is_synced = False
 bot.shift_management_disabled = False
 bot.punishments_disabled = False
 environment = config("ENVIRONMENT", default="DEVELOPMENT")
+DEV_GUILD_ID = config("DEV_GUILD_ID", default=0, cast=int)
+OWNER_IDS = config("OWNER_IDS", default="", cast=Csv(int))
 bot.internal_command_storage = {}
 
 

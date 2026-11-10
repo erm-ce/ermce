@@ -346,7 +346,7 @@ class OnMessage(commands.Cog):
                 )
             )
             section.add_item(discord.ui.TextDisplay(
-                f"### ERM\n"
+                f"### ERM CE\n"
                 f"The all-in-one staff management bot for ER:LC communities.\n\n"
                 f"**Prefix** — `{prefix}` or `/`\n"
                 f"**Commands** — `{prefix}help`\n"
@@ -356,9 +356,9 @@ class OnMessage(commands.Cog):
             container.add_item(section)
             container.add_item(discord.ui.Separator())
             container.add_item(discord.ui.ActionRow(
-                discord.ui.Button(label="Website", url="https://ermbot.xyz"),
-                discord.ui.Button(label="Support", url="https://discord.gg/uAfU26VRa8"),
-                discord.ui.Button(label="Documentation", url="https://docs.ermbot.xyz"),
+                discord.ui.Button(label="Website", url="https://ermce.fyi"),
+                discord.ui.Button(label="Support", url="https://discord.gg/vBdnMbkMHG"),
+                discord.ui.Button(label="Documentation", url="https://docs.ermce.fyi"),
             ))
             await message.reply(view=discord.ui.LayoutView().add_item(container))
             return
@@ -807,7 +807,7 @@ class OnMessage(commands.Cog):
                 except discord.NotFound:
                     pass
                 embed.set_footer(
-                    text=f'Thanks, {((dataset or {}).get("customisation") or {}).get("brand_name") or "ERM"}',
+                    text=f'Thanks, {((dataset or {}).get("customisation") or {}).get("brand_name") or "ERM CE"}',
                     icon_url=get_guild_icon(bot, message.guild),
                 )
 

@@ -434,7 +434,7 @@ class Utility(commands.Cog):
         # using an embed
         # [**Support Server**](https://discord.gg/5pMmJEYazQ)
         embed = discord.Embed(
-            title="About ERM cE",
+            title="About ERM CE",
             color=BLANK_COLOR,
             description="ERM CE is the all-in-one approach to game moderation logging, shift logging and more.",
         )
@@ -446,7 +446,7 @@ class Utility(commands.Cog):
                 "> **Support:** [Join Server](https://discord.gg/vBdnMbkMHG)\n"
                 f"> **Invite:** [Invite Bot](https://discord.com/oauth2/authorize?client_id={self.bot.user.id}&permissions=8&scope=bot%20applications.commands)\n"
                 "> **Documentation:** [View Documentation](https://docs.ermce.fyi)\n"
-                "> **Desktop:** [Download ERM CE Desktop](https://ermce.fyi/download)"
+    #            "> **Desktop:** [Download ERM CE Desktop](https://ermce.fyi/download)"
             ),
             inline=False,
         )
