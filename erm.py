@@ -227,9 +227,14 @@ class Bot(commands.AutoShardedBot):
                 ),
                 api_key=config("PRC_API_KEY", default=None),
             )
-            self.mc_api = MCApiClient(
-                self, base_url=config("MC_API_URL"), api_key=config("MC_API_KEY")
-            )
+            mc_api_url = config("MC_API_URL", default=None)
+            mc_api_key = config("MC_API_KEY", default=None)
+
+            if mc_api_url and mc_api_key:
+                self.mc_api = MCApiClient(self, base_url=mc_api_url, api_key=mc_api_key)
+            else:
+                self.mc_api = None
+                logging.warning("MC_API_URL/MC_API_KEY not set, MC API client disabled")
 
             Extensions = [m.name for m in iter_modules(["cogs"], prefix="cogs.")]
             Events = [m.name for m in iter_modules(["events"], prefix="events.")]
